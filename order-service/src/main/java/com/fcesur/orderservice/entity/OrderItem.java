@@ -1,18 +1,17 @@
 package com.fcesur.orderservice.entity;
 
-
 import com.fcesur.orderservice.entity.abstracts.BaseEntity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Table(name = "order_items")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -22,6 +21,6 @@ public class OrderItem extends BaseEntity {
     private Integer quantity;
 
     @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
     private Order order;
-
 }

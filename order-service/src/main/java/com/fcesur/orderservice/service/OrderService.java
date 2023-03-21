@@ -7,10 +7,10 @@ import com.fcesur.orderservice.entity.Order;
 import com.fcesur.orderservice.mapper.OrderMapper;
 import com.fcesur.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
+
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +20,9 @@ public class OrderService {
 
     public OrderResponse placeOrder(OrderRequest request) {
         Order order = orderMapper.map(request);
+
+        order.getItems().forEach(orderItem -> orderItem.setOrder(order));
+
         order.setOrderNumber(UUID.randomUUID().toString());
 
         Order savedOrder = orderRepository.save(order);
