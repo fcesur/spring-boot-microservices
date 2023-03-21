@@ -14,6 +14,10 @@ An exemplary approach to Microservices Architecture with using Spring Boot
 - Redis
 - Lombok
 - MapStruct
+- JUnit 5
+- AssertJ
+- Mockito
+- Test Containers
 - Docker
 - Docker-Compose
 - Kubernetes
