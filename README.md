@@ -14,3 +14,6 @@ An exemplary approach to Microservices Architecture with using Spring Boot
 - Redis
 - Lombok
 - MapStruct
+- Docker
+- Docker-Compose
+- Kubernetes
